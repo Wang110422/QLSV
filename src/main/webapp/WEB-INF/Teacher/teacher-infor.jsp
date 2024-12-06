@@ -68,8 +68,8 @@
             <table class="the-text">
 				<c:if test="${not empty teacher}">
                 <tr class="tr-text">
-                    <td>Mã sinh viên</td>
-                    <td>${teacher.id}</td>
+                    <td>Mã giảng viên</td>
+                    <td>${teacher.teacherId}</td>
                 </tr>
                 <tr class="tr-text">
                     <td>Họ và tên</td>
@@ -89,15 +89,15 @@
                 </tr>
                 <tr class="tr-text">
                     <td>Số điện thoại</td>
-                    <td>${teacher.phonenumber}</td>
+                    <td>${teacher.phoneNumber}</td>
                 </tr>
                 <tr class="tr-text">
                     <td>Email</td>
                     <td>${teacher.email}</td>
                 </tr>
                 <tr class="tr-text">
-                    <td>Lớp</td>
-                    <td>${teacher.lop.classId}</td>
+                    <td>Khoa</td>
+                    <td>${teacher.department.departmentId}</td>
                 </tr>
 				</c:if>
 				<c:if test="${not empty error}">

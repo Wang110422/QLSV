@@ -15,7 +15,7 @@
         <div class="header-user">
             <!-- <img th:src="@{/img/avatar.png}" alt="Avatar" class="header-avatar"> -->
             <img src="/images/avatar.png" alt="Avatar" class="header-avatar">
-            <p class="header-username">${student.name}</p>
+            <p class="header-username">${teacher.name}</p>
         </div>
     </header>
 	<div id="menu">
@@ -25,37 +25,37 @@
 	                <button id="toggleButton">☰</button>
 	            </li>
 	            <li>
-	                <a href="/student/home" class="a-root" >
+	                <a href="/teacher/home" class="a-root" >
 	                    <i class="fas fa-home"></i>
 	                    <span class="menu-item">Trang chủ</span>
 	                </a>
 	            </li>
 	            <li>
-	                <a href="/student/infor" class="a-root">
+	                <a href="/teacher/infor" class="a-root">
 	                    <i class="fas fa-user"></i>
 	                    <span class="menu-item">Thông tin cá nhân</span>
 	                </a>
 	            </li>
 	            <li>
-	                <a href="/student/course" class="a-root">
+	                <a href="/teacher/course" class="a-root">
 	                    <i class="fas fa-wallet"></i>
 	                    <span class="menu-item">Học phần</span>
 	                </a>
 	            </li>
 	            <li>
-	                <a href="/student/timetable" class="a-root">
+	                <a href="/teacher/timetable" class="a-root">
 	                    <i class="fas fa-tasks"></i>
 	                    <span class="menu-item">Thời khóa biểu</span>
 	                </a>
 	            </li>
 	            <li>
-	                <a href="/student/feedback" class="a-root"> 
+	                <a href="/teacher/feedback" class="a-root"> 
 	                    <i class="fas fa-cog"></i>
 	                    <span class="menu-item">Gửi đánh giá</span>
 	                </a>
 	            </li>
 	            <li>
-	                <a href="/student/login" style="margin-top: 250px;" class="a-root">
+	                <a href="/teacher/login" style="margin-top: 250px;" class="a-root">
 	                    <i class="fas fa-sign-out-alt"></i>
 	                    <span class="menu-item">Đăng xuất</span>
 	                </a>

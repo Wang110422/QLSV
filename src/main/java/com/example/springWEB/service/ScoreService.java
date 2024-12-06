@@ -21,4 +21,10 @@ public class ScoreService {
 	public int countStudentByCourse(String courseId) {
 		return scoreRepository.countStudentinCourse(courseId);
 	}
+	public List<Score> getAllStudentByCourseId(String courseId){
+		return scoreRepository.getAllStudentByCourseId(courseId);
+	}
+	public void saveAllScores(List<Score> scores) {
+		scoreRepository.saveAll(scores);
+	}
 }

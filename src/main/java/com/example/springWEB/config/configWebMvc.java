@@ -16,20 +16,16 @@ import org.springframework.web.servlet.view.JstlView;
 public class configWebMvc implements WebMvcConfigurer {
 
     // 2 cai nay dung de su dung file jsp
+   
     @Bean
-    public ViewResolver viewResolver() {
+    public ViewResolver viewResolver2() {
         final InternalResourceViewResolver bean = new InternalResourceViewResolver();
         bean.setViewClass(JstlView.class);
-        bean.setPrefix("/WEB-INF/view/");
-        bean.setPrefix("/WEB-INF/Teacher/");
+        bean.setPrefix("/WEB-INF/");
         bean.setSuffix(".jsp");
         return bean;
     }
-
-    @Override
-    public void configureViewResolvers(ViewResolverRegistry registry) {
-        registry.viewResolver(viewResolver());
-    }
+  
 
     // setup to use css
     @Override

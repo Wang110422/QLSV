@@ -12,4 +12,6 @@ import com.example.springWEB.domain.Teacher;
 @Repository
 public interface TeacherRepository extends JpaRepository<Teacher,String>{
 	 public Optional<Teacher> findById(String TeacherId);
+	 
+	 public Teacher save(String TeacherId);
 }

@@ -161,8 +161,8 @@
 					</tr>
                     <tr> 
 						<td>Số điện thoại:</td> 
-						<td>${teacher.phonenumber}</td> 
-						<td><input type="text" name="phonenumber" value="${teacher.phonenumber}"></td> 
+						<td>${teacher.phoneNumber}</td> 
+						<td><input type="text" name="phoneNumber" value="${teacher.phoneNumber}"></td> 
 					</tr>
 					<tr> 
 						<td>Email:</td> 
@@ -174,9 +174,10 @@
 						<td>${teacher.password}</td> 
 						<td><input type="text" name="password" value="${teacher.password}"></td> 
 					</tr>
-                    <input hidden type="text" name="roles" value="${teacher.roles}">
-                    <input hidden type="text" name="departmentId" value="${teacher.department != null ? teacher.department.departmentId : ''}">
-					<input hidden type="text" name="classId" value="${teacher.lop != null ? teacher.lop.classId : ''}">
+                    <input hidden type="text" name="role" value="${teacher.role}">
+                    <input hidden type="text" name="departmentId" value="${teacher.department.departmentId}">
+					<input hidden type="text" name="teacherId" value="${teacher.teacherId}">
+
 
                 </table>
                 <div class="infor-update-btn">

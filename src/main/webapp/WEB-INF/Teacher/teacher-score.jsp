@@ -70,13 +70,13 @@
             <p> - </p>
             <p class="content-heading-id">${courses.courseId}</p>
         </div>
-        <form class="score-management">
-            <input type="hidden" name="courseId">
-            <table class="score-list">
+        <form class="score-management" action = "${pageContext.request.contextPath}/teacher/course-score" method = "post">
+				<input type="hidden" name="courseId" value="${courses.courseId}">            
+				<table class="score-list">
                 <tr>
                     <th>STT</th>
                     <th>Mã sinh viên</th>
-                    <th>Mã học phần</th>
+                    <th>Tên sinh viên</th>
                     <th>Thường xuyên 1</th>
                     <th>Thường xuyên 2</th>
                     <th>Kết quả thi</th>
@@ -84,14 +84,15 @@
 				 <c:forEach var="sc1" items="${scores}" varStatus="iterStat"> 
 					<tr>
 						<td>${iterStat.index + 1}</td> 
-						<td>${sc1.teacher.id}</td>
-						<td>${sc1.course.courseId}</td>
-						<td>${sc1.score1}</td> 
-						<td>${sc1.score2}</td> 
-						<td>${sc1.lastscore}</td> 
+						<td>${sc1.student.id}</td>
+						<td>${sc1.student.name}</td>
+						<td><input type="text" name="score1" value="${sc1.score1}"></td>
+						<td><input type="text" name="score2" value="${sc1.score2}"></td>
+						<td><input type="text" name="lastscore" value="${sc1.lastscore}"></td> 
 					</tr>
 				 </c:forEach>
             </table>
+			<input class="score-submit" type="submit" value="Cập nhật điểm">
         </form>
     </div>
     <script>

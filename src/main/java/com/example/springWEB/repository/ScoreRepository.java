@@ -20,4 +20,9 @@ public interface ScoreRepository extends JpaRepository<Score,ScoreId> {
 	
 	@Query("SELECT COUNT(DISTINCT s.id.studentId) from Score s where s.id.courseId =:courseId")
 	int countStudentinCourse(@Param("courseId") String courseId);
+	
+	@Query("Select s from Score s where s.id.courseId = :courseId")
+	List<Score> getAllStudentByCourseId(@Param("courseId") String courseId);
+
+
 }

@@ -43,14 +43,14 @@ public class StudentsController {
 		Optional<Students> studentop = studentService.getStudentById(studentID);
     	Students student = studentop.get();
         model.addAttribute("student", student);
-		return "home";
+		return "Student/home";
 	}
 	@GetMapping("/home") 
 	public String studentHome(Model model) {
 		Optional<Students> studentop = studentService.getStudentById(studentID);
     	Students student = studentop.get();
         model.addAttribute("student", student);
-		return "home";
+		return "Student/home";
 	}
 	
 	@GetMapping("/infor")	
@@ -58,7 +58,7 @@ public class StudentsController {
         Optional<Students> studentop = studentService.getStudentById(studentID);
         	Students student = studentop.get();
             model.addAttribute("student", student);
-        return "student-infor";
+        return "Student/student-infor";
     }
 
 	@GetMapping("/course")
@@ -68,7 +68,7 @@ public class StudentsController {
     	Students student = studentop.get();
         model.addAttribute("student", student);
         model.addAttribute("courses", courses);    	
-		return "student-course";
+		return "Student/student-course";
 	}
 	
 	@GetMapping("/timetable")
@@ -79,7 +79,7 @@ public class StudentsController {
         
 		List<Courses> courses = coursesService.getAllCourses(studentID);
         model.addAttribute("courses", courses);    	
-		return "timetable";
+		return "Student/timetable";
 	}
 	
 	@GetMapping("/feedback")
@@ -87,7 +87,7 @@ public class StudentsController {
 		Optional<Students> studentop = studentService.getStudentById(studentID);
     	Students student = studentop.get();
         model.addAttribute("student", student);
-		return "feedback";
+		return "Student/feedback";
 	}
 	
 	@PostMapping("/feedback")
@@ -109,14 +109,14 @@ public class StudentsController {
 		Courses courses = coursesService.getCourseByID(courseId);
 		model.addAttribute("courses",courses);
 		model.addAttribute("scores",scores);
-		return "student-score";
+		return "Student/student-score";
 	}
 	@GetMapping("/infor/change")
 	public String studentChangeInfor(Model model) {
 		Optional<Students> studentop = studentService.getStudentById(studentID);
     	Students student = studentop.get();
         model.addAttribute("student", student);
-		return "student-changeinfor";
+		return "Student/student-changeinfor";
 	}
 	@PostMapping("/infor/change")
 	public String StudentChange(@ModelAttribute("student") Students student, Model model) {

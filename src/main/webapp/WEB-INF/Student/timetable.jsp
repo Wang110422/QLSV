@@ -85,7 +85,8 @@
 									 <p class="course-name">${s.courseName}</p> 
 									 <p class="course-id">${s.courseId}</p> 
 									 <p class="course-time">${s.time}</p> 
-									 <p class="course-place">${s.room}</p> 
+									 <p class="course-place">${s.room}</p>
+									 <p style = "color:blue">------------------------------------------</p>
 								 </c:if>
 								 </c:forEach>
 							 </div>
@@ -100,6 +101,7 @@
 							    <p class="course-id">${s.courseId}</p> 
 								<p class="course-time">${s.time}</p> 
 								<p class="course-place">${s.room}</p> 
+								<p style = "color:blue">------------------------------------------</p>
 							</c:if>
 							</c:forEach>
 						</div>
@@ -114,6 +116,7 @@
 							 	    <p class="course-id">${s.courseId}</p> 
 							 		<p class="course-time">${s.time}</p> 
 							 		<p class="course-place">${s.room}</p> 
+									<div styles = "color: blue ">------------------------------------------</div>
 							 	</c:if>
 								</c:forEach>
 							</div>
@@ -128,6 +131,7 @@
 								  	    <p class="course-id">${s.courseId}</p> 
 								  		<p class="course-time">${s.time}</p> 
 								  		<p class="course-place">${s.room}</p> 
+										<div styles = "color: blue ">------------------------------------------</div>
 							  	</c:if>
 								</c:forEach>
 							</div>
@@ -142,6 +146,7 @@
 								   	    <p class="course-id">${s.courseId}</p> 
 								   		<p class="course-time">${s.time}</p> 
 								   		<p class="course-place">${s.room}</p> 
+										<div styles = "color: blue ">------------------------------------------</div>
 							   		</c:if>
 									</c:forEach>
 								</div>
@@ -156,6 +161,7 @@
 									    <p class="course-id">${s.courseId}</p> 
 										<p class="course-time">${s.time}</p> 
 										<p class="course-place">${s.room}</p> 
+										<p styles = "color:blue">------------------------------------------</p>
 									</c:if>
 									</c:forEach>
 								</div>
@@ -170,6 +176,7 @@
 								 	    <p class="course-id">${s.courseId}</p> 
 								 		<p class="course-time">${s.time}</p> 
 								 		<p class="course-place">${s.room}</p> 
+										<div styles = "color: blue ">------------------------------------------</div>
 								 	</c:if>
 									</c:forEach>
 								<div>

@@ -26,37 +26,37 @@
                 <button id="toggleButton">☰</button>
             </li>
             <li>
-                <a href="/student/home" class="a-root" >
+                <a href="/teacher/home" class="a-root" >
                     <i class="fas fa-home"></i>
                     <span class="menu-item">Trang chủ</span>
                 </a>
             </li>
             <li>
-                <a href="/student/infor" class="a-root">
+                <a href="/teacher/infor" class="a-root">
                     <i class="fas fa-user"></i>
                     <span class="menu-item">Thông tin cá nhân</span>
                 </a>
             </li>
             <li>
-                <a href="/student/course" class="a-root">
+                <a href="/teacher/course" class="a-root">
                     <i class="fas fa-wallet"></i>
                     <span class="menu-item">Học phần</span>
                 </a>
             </li>
             <li>
-                <a href="/student/timetable" class="a-root">
+                <a href="/teacher/timetable" class="a-root">
                     <i class="fas fa-tasks"></i>
                     <span class="menu-item">Thời khóa biểu</span>
                 </a>
             </li>
             <li>
-                <a href="/student/feedback" class="a-root"> 
+                <a href="/teacher/feedback" class="a-root"> 
                     <i class="fas fa-cog"></i>
                     <span class="menu-item">Hỗ trợ</span>
                 </a>
             </li>
             <li>
-                <a href="/student/login" style="margin-top: 250px;" class="a-root">
+                <a href="/teacher/login" style="margin-top: 250px;" class="a-root">
                     <i class="fas fa-sign-out-alt"></i>
                     <span class="menu-item">Đăng xuất</span>
                 </a>
@@ -65,7 +65,7 @@
     </div>
     <div class="content">
         <div class="content-wrap">
-            <form action="${pageContext.request.contextPath}/student/feedback" method="post">
+            <form action="${pageContext.request.contextPath}/teacher/feedback" method="post">
                 <p class="content-heading">Hãy để lại cảm nhận của bạn khi sử dụng hệ thống nhé! Đó là những đóng góp quan trọng giúp chúng tôi cải thiện hệ thống!</p>
                 <textarea name="content" placeholder="Nhập nội dung ở đây..." value="${feedBack.content}"></textarea>
                 <input class="feedback-submit" type="submit" value="Gửi đánh giá" >

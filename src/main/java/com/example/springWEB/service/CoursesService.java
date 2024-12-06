@@ -19,5 +19,11 @@ public class CoursesService {
 	public Courses getCourseByID(String courseId) {
 		return coursesReponsitory.findByCourseId(courseId);
 	}
+	
+	public List<Courses> getCourses(String teacherId) {
+		return coursesReponsitory.findByTeacherId(teacherId);
+		
+	
+	}
 }
 	

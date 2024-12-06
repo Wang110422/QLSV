@@ -27,37 +27,37 @@
 	                <button id="toggleButton">☰</button>
 	            </li>
 	            <li>
-	                <a href="/student/home" class="a-root" >
+	                <a href="/teacher/home" class="a-root" >
 	                    <i class="fas fa-home"></i>
 	                    <span class="menu-item">Trang chủ</span>
 	                </a>
 	            </li>
 	            <li>
-	                <a href="/student/infor" class="a-root">
+	                <a href="/teacher/infor" class="a-root">
 	                    <i class="fas fa-user"></i>
 	                    <span class="menu-item">Thông tin cá nhân</span>
 	                </a>
 	            </li>
 	            <li>
-	                <a href="/student/course" class="a-root">
+	                <a href="/teacher/course" class="a-root">
 	                    <i class="fas fa-wallet"></i>
 	                    <span class="menu-item">Học phần</span>
 	                </a>
 	            </li>
 	            <li>
-	                <a href="/student/timetable" class="a-root">
+	                <a href="/teacher/timetable" class="a-root">
 	                    <i class="fas fa-tasks"></i>
 	                    <span class="menu-item">Thời khóa biểu</span>
 	                </a>
 	            </li>
 	            <li>
-	                <a href="/student/feedback" class="a-root"> 
+	                <a href="/teacher/feedback" class="a-root"> 
 	                    <i class="fas fa-cog"></i>
 	                    <span class="menu-item">Gửi đánh giá</span>
 	                </a>
 	            </li>
 	            <li>
-	                <a href="/student/login" style="margin-top: 250px;" class="a-root">
+	                <a href="/teacher/login" style="margin-top: 250px;" class="a-root">
 	                    <i class="fas fa-sign-out-alt"></i>
 	                    <span class="menu-item">Đăng xuất</span>
 	                </a>
@@ -65,14 +65,14 @@
 	        </ul>
 	    </div>
     <div class="content" >	
-		<c:forEach var="course" items="${courses}">
+		<c:forEach var="course" items="${courses}" varStatus ="status">
         <ul class="courses-list">
 				 <li class="courses-item">
-					 <a href="${pageContext.request.contextPath}/student/course-scores?courseId=${course.courseId}" class="courses-item-link">
+					 <a href="${pageContext.request.contextPath}/teacher/course-scores?courseId=${course.courseId}" class="courses-item-link">
 						 <div class="course-name">${course.courseName}</div>
 						 <div class="course-id-wrap">Mã học phần:<p class="course-id">${course.courseId}</p></div> 
 						 <div class="course-credit-wrap">Số tín chỉ:<p class="course-credit">${course.credit}</p></div> 
-						 <div class="course-students-wrap">Số sinh viên:<p class="course-students">${course.teacher.teacherId}</p></div> 
+						 <div class="course-students-wrap">Số sinh viên:<p class="course-students">${count[status.index]}</p></div> 
 					 </a> 
 				 </li> 
         </ul>
