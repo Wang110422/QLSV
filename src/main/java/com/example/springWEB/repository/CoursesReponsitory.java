@@ -18,6 +18,7 @@ public interface CoursesReponsitory extends JpaRepository<Courses, String>{
 	@Query("Select c from Courses c where c.teacher.teacherId = :teacherId")
 	List<Courses> findByTeacherId(@Param("teacherId") String teacherId);
 	
+	List<Courses> findAll();
 	
 	
 }	

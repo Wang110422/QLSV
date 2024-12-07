@@ -2,6 +2,7 @@ package com.example.springWEB.domain;
 
 import java.util.List;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
@@ -31,7 +32,10 @@ public class Courses {
 	@JoinColumn(name = "magv")
 	private Teacher teacher;
 	
-	@OneToMany(mappedBy = "course")
+	//Nhằm để xóa được đối tượng có khóa chính của đối tượng khác
+//	@OneToMany(mappedBy = "course", cascade = CascadeType.ALL, orphanRemoval = true)
+
+	@OneToMany(mappedBy = "course" )
 	private List<Score> scores;
 	
 	@OneToMany(mappedBy = "course")
@@ -50,6 +54,7 @@ public class Courses {
 		this.scores = scores;
 		this.timetables = timetables;
 	}
+
 
 	public String getCourseId() {
 		return courseId;

@@ -14,4 +14,7 @@ public interface TeacherRepository extends JpaRepository<Teacher,String>{
 	 public Optional<Teacher> findById(String TeacherId);
 	 
 	 public Teacher save(String TeacherId);
+	 
+	 public List<Teacher> findAll();
+	 
 }

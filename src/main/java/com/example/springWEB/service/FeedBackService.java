@@ -1,5 +1,7 @@
 package com.example.springWEB.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,5 +15,12 @@ public class FeedBackService {
 	
 	public FeedBack save(FeedBack content) {
 		return feedBackRepository.save(content);
+	}
+	
+	public List<FeedBack> getAllFeedBack(){
+		return feedBackRepository.findAll();
+	}
+	public void deleteByFeedBackId(int feedBackId) {
+		feedBackRepository.deleteById(feedBackId);
 	}
 }

@@ -16,6 +16,11 @@ public class Admin {
 	private String password;
 	@Column(name = "phanquyen")
 	private String roles;
+	
+	
+	public Admin() {
+		super();
+	}
 	public String getAdminId() {
 		return adminId;
 	}

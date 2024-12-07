@@ -1,10 +1,12 @@
 package com.example.springWEB.service;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.example.springWEB.domain.Department;
 import com.example.springWEB.domain.Teacher;
 import com.example.springWEB.repository.TeacherRepository;
 
@@ -33,7 +35,17 @@ import com.example.springWEB.repository.TeacherRepository;
 				return teacherRepository.save(teacheredit);
 			}else { throw new RuntimeException("teacher not found with id: " + teacherId);
 			
+					}
 		}
-}
+		
+		public List<Teacher> getAllTeachers(){
+			return teacherRepository.findAll();
+		}
+		public void deleteByTeacherId(String teacherId) {
+			teacherRepository.deleteById(teacherId);
+		}
+		public void addTeacher(Teacher teacher) {
+			teacherRepository.save(teacher);
+		}
 	}
 	

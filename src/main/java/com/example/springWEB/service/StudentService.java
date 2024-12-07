@@ -1,5 +1,6 @@
 package com.example.springWEB.service;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,12 +32,20 @@ public class StudentService{
 			studentedit.setLop(student.getLop());
 			studentedit.setDepartment(student.getDepartment());
 			studentedit.setScores(student.getScores());
-			studentedit.setTimetables(student.getTimetables());
-			return studentsRepository.save(student);
+			return studentsRepository.save(studentedit);
 		}else { throw new RuntimeException("Student not found with id: " + studentId);
 		
-	}
-
-}
+				}
 	
+	}
+	public List<Students> getAllStudent(){
+		return studentsRepository.findAll();
+	}
+	
+	public void deleteByStudentId(String studentId) {
+		studentsRepository.deleteById(studentId);
+	}
+	public void addStudent(Students student) {
+		studentsRepository.save(student);
+	}
 }
