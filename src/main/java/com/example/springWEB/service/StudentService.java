@@ -41,11 +41,20 @@ public class StudentService{
 	public List<Students> getAllStudent(){
 		return studentsRepository.findAll();
 	}
+	public Optional<Students> findById(String username) {
+		return studentsRepository.findById(username);
+	}
 	
 	public void deleteByStudentId(String studentId) {
 		studentsRepository.deleteById(studentId);
 	}
 	public void addStudent(Students student) {
 		studentsRepository.save(student);
+	}
+	public List<String> getAllClass(){
+		return studentsRepository.getAll();
+	}
+	public List<Students> getStudentByClassId(String classId){
+		return studentsRepository.findByClassId(classId);
 	}
 }

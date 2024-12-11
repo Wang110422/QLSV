@@ -57,7 +57,7 @@
 	                </a>
 	            </li>
 	            <li>
-	                <a href="/admin/login" style="margin-top: 250px;" class="a-root">
+	                <a href="/login" style="margin-top: 250px;" class="a-root">
 	                    <i class="fas fa-sign-out-alt"></i>	
 	                    <span class="menu-item">Đăng xuất</span>
 	                </a>
@@ -75,7 +75,7 @@
 			                    </tr>
 			                    <tr>
 			                        <td>Họ và tên:</td>
-			                        <td><input name="teacherName" type="text" value="${teacher.teacherName}"></td>
+			                        <td><input name="name" type="text" value="${teacher.name}"></td>
 			                    </tr>
 								<tr>
 								    <td>Giới tính:</td>

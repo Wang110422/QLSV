@@ -21,8 +21,10 @@ import com.example.springWEB.service.CoursesService;
 import com.example.springWEB.service.FeedBackService;
 import com.example.springWEB.service.ScoreService;
 import com.example.springWEB.service.StudentService;
+import com.mysql.cj.xdevapi.Session;
 
 import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpSession;
 
 @Controller
 @RequestMapping("/student")
@@ -36,17 +38,24 @@ public class StudentsController {
 	@Autowired
 	private CoursesService coursesService;
 	
-	private String studentID = "SV00000003";
 	
 	@PostMapping("/home")
-	public String studentToHome(Model model) {
+	public String studentToHome(Model model, HttpSession session) {
+		String studentID = (String) session.getAttribute("username");
+		if(studentID==null) {
+			return "Student/login";
+		}
 		Optional<Students> studentop = studentService.getStudentById(studentID);
     	Students student = studentop.get();
         model.addAttribute("student", student);
 		return "Student/home";
 	}
 	@GetMapping("/home") 
-	public String studentHome(Model model) {
+	public String studentHome(Model model,HttpSession session) {
+		String studentID = (String) session.getAttribute("username");
+		if(studentID==null) {
+			return "Student/login";
+		}
 		Optional<Students> studentop = studentService.getStudentById(studentID);
     	Students student = studentop.get();
         model.addAttribute("student", student);
@@ -54,7 +63,11 @@ public class StudentsController {
 	}
 	
 	@GetMapping("/infor")	
-	public String getStudentInfo(Model model) {
+	public String getStudentInfo(Model model, HttpSession session) {
+		String studentID = (String) session.getAttribute("username");
+		if(studentID==null) {
+			return "Student/login";
+		}
         Optional<Students> studentop = studentService.getStudentById(studentID);
         	Students student = studentop.get();
             model.addAttribute("student", student);
@@ -62,7 +75,11 @@ public class StudentsController {
     }
 
 	@GetMapping("/course")
-	public String studentCourse(Model model) {
+	public String studentCourse(Model model, HttpSession session) {
+		String studentID = (String) session.getAttribute("username");
+		if(studentID==null) {
+			return "Student/login";
+		}
 		Optional<Students> studentop = studentService.getStudentById(studentID);
 		List<Courses> courses = coursesService.getAllCourses(studentID);
     	Students student = studentop.get();
@@ -72,7 +89,11 @@ public class StudentsController {
 	}
 	
 	@GetMapping("/timetable")
-	public String studentTimeTable(Model model) {
+	public String studentTimeTable(Model model , HttpSession session) {
+		String studentID = (String) session.getAttribute("username");
+		if(studentID==null) {
+			return "Student/login";
+		}
 		Optional<Students> studentop = studentService.getStudentById(studentID);
     	Students student = studentop.get();
         model.addAttribute("student", student);
@@ -83,7 +104,11 @@ public class StudentsController {
 	}
 	
 	@GetMapping("/feedback")
-	public String studentFeedBack(Model model) {
+	public String studentFeedBack(Model model , HttpSession session) {
+		String studentID = (String) session.getAttribute("username");
+		if(studentID==null) {
+			return "Student/login";
+		}
 		Optional<Students> studentop = studentService.getStudentById(studentID);
     	Students student = studentop.get();
         model.addAttribute("student", student);
@@ -100,7 +125,11 @@ public class StudentsController {
 	
 	
 	@GetMapping("/course-scores")
-	public String studentScore(@RequestParam("courseId") String courseId, Model model) {
+	public String studentScore(@RequestParam("courseId") String courseId, Model model , HttpSession session) {
+		String studentID = (String) session.getAttribute("studentID");
+		if(studentID==null) {
+			return "Student/login";
+		}
 		Optional<Students> studentop = studentService.getStudentById(studentID);
     	Students student = studentop.get();
     	model.addAttribute("student",student);
@@ -112,14 +141,22 @@ public class StudentsController {
 		return "Student/student-score";
 	}
 	@GetMapping("/infor/change")
-	public String studentChangeInfor(Model model) {
+	public String studentChangeInfor(Model model , HttpSession session) {
+		String studentID = (String) session.getAttribute("studentID");
+		if(studentID==null) {
+			return "Student/login";
+		}
 		Optional<Students> studentop = studentService.getStudentById(studentID);
     	Students student = studentop.get();
         model.addAttribute("student", student);
 		return "Student/student-changeinfor";
 	}
 	@PostMapping("/infor/change")
-	public String StudentChange(@ModelAttribute("student") Students student, Model model) {
+	public String StudentChange(@ModelAttribute("student") Students student, Model model , HttpSession session) {
+		String studentID = (String) session.getAttribute("studentID");
+		if(studentID==null) {
+			return "Student/login";
+		}
 		Optional<Students> studentop = studentService.getStudentById(studentID);
     	Students student1 = studentop.get();
 		student.setId(studentID);

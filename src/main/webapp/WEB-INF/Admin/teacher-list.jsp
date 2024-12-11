@@ -57,7 +57,7 @@
 	                </a>
 	            </li>
 	            <li>
-	                <a href="/admin/login" style="margin-top: 250px;" class="a-root">
+	                <a href="/login" style="margin-top: 250px;" class="a-root">
 	                    <i class="fas fa-sign-out-alt"></i>	
 	                    <span class="menu-item">Đăng xuất</span>
 	                </a>
@@ -67,6 +67,16 @@
     <div class="content">
 		<div class="content-wrap">
 		           <p class="content-heading">Quản lý sinh viên</p>
+				   <form action="/admin/teacher-manager" method="get" style="margin-bottom: 5px;">
+				   					<select id="department" name="departments">
+				   						<option value="">--Chọn Lớp--</option>
+				   						<option value="all">All</option>
+				   						<c:forEach var="departmentId" items="${departmentIds}">
+				   							<option value="${departmentId}">${departmentId}</option>
+				   						</c:forEach>
+				   					</select>
+				   						<button type="submit">Lọc</button>
+				   					</form>
 				   <table class="student-list">
 				                   <tr>
 				                       <th>STT</th>

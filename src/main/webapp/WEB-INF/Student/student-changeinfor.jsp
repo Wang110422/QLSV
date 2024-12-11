@@ -123,7 +123,7 @@
                 </a>
             </li>
             <li>
-                <a href="/student/login" style="margin-top: 250px;" class="a-root">
+                <a href="/login" style="margin-top: 250px;" class="a-root">
                     <i class="fas fa-sign-out-alt"></i>
                     <span class="menu-item">Đăng xuất</span>
                 </a>

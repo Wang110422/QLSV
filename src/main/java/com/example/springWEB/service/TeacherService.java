@@ -47,5 +47,14 @@ import com.example.springWEB.repository.TeacherRepository;
 		public void addTeacher(Teacher teacher) {
 			teacherRepository.save(teacher);
 		}
+		public Optional<Teacher> findById(String username) {
+			return teacherRepository.findById(username);
+		}
+		public List<Teacher> findTeacherByDepartmentId(String departmentId){
+			return teacherRepository.findByDepartmentId(departmentId);
+		}
+		public List<String> getDepartmentId(){
+			return teacherRepository.getAll();
+		}
 	}
 	
