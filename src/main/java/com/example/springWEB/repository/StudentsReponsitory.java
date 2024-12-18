@@ -1,9 +1,10 @@
 package com.example.springWEB.repository;
 
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
-import org.springframework.lang.NonNull;
 import org.springframework.stereotype.Repository;
 
 import com.example.springWEB.domain.Students;
@@ -25,4 +26,5 @@ public interface StudentsReponsitory extends JpaRepository<Students, String>{
 	
 	@Query("select s from Students s where s.lop.classId = :classId")
 	public List<Students> findByClassId(@Param("classId") String classId);
+	
 }

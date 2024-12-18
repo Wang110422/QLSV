@@ -4,6 +4,8 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import com.example.springWEB.domain.Courses;
@@ -41,7 +43,7 @@ public class CoursesService {
 		if(optional.isPresent()) {
 			Teacher teacher = new Teacher();
 			Courses courseedit = optional.get();
-			courseedit.setCourseId(course.getCourseId());
+			teacher.setTeacherId(course.getTeacher().getTeacherId());
 			courseedit.setCourseName(course.getCourseName());
 			courseedit.setCredit(course.getCredit());
 			courseedit.setDate(course.getDate());
@@ -53,5 +55,8 @@ public class CoursesService {
 		
 				}
 }
+	public Page<Courses> getPage(Pageable pageable){
+		return coursesReponsitory.findAll(pageable);
+	}
 }
 	
