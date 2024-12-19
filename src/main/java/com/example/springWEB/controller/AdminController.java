@@ -76,7 +76,7 @@ public class AdminController {
 		if(adminId==null) {
 			return "Student/userlogin";
 		}
-		Pageable pageable = PageRequest.of(page-1, 6);
+		Pageable pageable = PageRequest.of(page-1, 5);
 		Page<Students> pageStudent = studentService.getPage(pageable); 
 		
 		System.out.println(page);

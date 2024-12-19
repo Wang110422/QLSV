@@ -134,7 +134,7 @@ public class TeacherController {
 	public String studentScore1(@RequestParam("courseId") String courseId,
 								@RequestParam List<Double> score1,
 								@RequestParam List<Double> score2,
-								@RequestParam List<Double> lastscore,Model model , HttpSession session) {
+								@RequestParam List<Double> lastscore,Model model , HttpSession session , RedirectAttributes redirectAttributes) {
 		String teacherId = (String) session.getAttribute("username");
 		if(teacherId==null) {
 			return "Student/userlogin";
@@ -147,6 +147,7 @@ public class TeacherController {
 			scores.get(i).setLastscore(lastscore.get(i));
 		}
 		scoreService.saveAllScores(scores);
+		redirectAttributes.addFlashAttribute("message", "Cập nhật điểm sinh viên thành công");
 		return "redirect:/teacher/info-course?courseId=" + courseId;
 	}
 	@GetMapping("/schedule")

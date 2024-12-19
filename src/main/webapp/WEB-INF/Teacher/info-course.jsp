@@ -89,7 +89,21 @@
                 <span>Phản hồi</span>
             </a>
         </li>
-
+		<c:if test="${not empty message}">
+		            <div class="alert alert-success" id="success-alert" style="position: absolute; left: 720px; top: 107px; color: rgb(4, 126, 23);">
+		                ${message}
+		            </div>
+		            <script>
+		                window.setTimeout(function() {
+		                    var alert = document.getElementById("success-alert");
+		                    alert.style.transition = "opacity 1s ease-out";
+		                    alert.style.opacity = "0";
+		                    window.setTimeout(function() {
+		                        alert.style.display = 'none';
+		                    }, 500);
+		                }, 1000);
+		            </script>
+		        </c:if>
     </ul>
     <!-- End of Sidebar -->
 
@@ -298,16 +312,16 @@
                 <tr>
                     <th>Tên học phần</th>
                     <th>Mã học phần</th>
-                    <th>Mã Giảng viên</th>
+                    <th>Tổng số sinh viên</th>
                     <th>Số tín chỉ</th>
                 </tr>
                 </thead>
                 <tbody>
-                <c:forEach var="course" items="${courses}">
+                <c:forEach var="course" items="${courses}" varStatus ="status">
                     <tr>
                         <td><a href="${pageContext.request.contextPath}/teacher/course-score?courseId=${course.courseId}" class="course-name">${course.courseName}</a></td>
                         <td>${course.courseId}</td>
-                        <td>${course.teacher.teacherId}</td>
+                        <td>${count[status.index]}</td>
                         <td>${course.credit}</td>
                     </tr>
                 </c:forEach>

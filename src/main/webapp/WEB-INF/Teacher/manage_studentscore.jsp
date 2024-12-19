@@ -89,7 +89,21 @@
                 <span>Phản hồi</span>
             </a>
         </li>
-
+		<c:if test="${not empty message}">
+		            <div class="alert alert-success" id="success-alert" style="position: absolute; left: 720px; top: 107px; color: rgb(4, 126, 23);">
+		                ${message}
+		            </div>
+		            <script>
+		                window.setTimeout(function() {
+		                    var alert = document.getElementById("success-alert");
+		                    alert.style.transition = "opacity 1s ease-out";
+		                    alert.style.opacity = "0";
+		                    window.setTimeout(function() {
+		                        alert.style.display = 'none';
+		                    }, 500);
+		                }, 1000);
+		            </script>
+		        </c:if>
     </ul>
     <!-- End of Sidebar -->
 
@@ -298,7 +312,7 @@
                 <h4 class="text-black font-weight-bold" >${courses.courseName} -  ${courses.courseId}</h4>
 
             </div>
-            <form class="table-responsive" action = "${pageContext.request.contextPath}/teacher/course-score" method = "post">
+            <form class="table-responsive" action = "${pageContext.request.contextPath}/teacher/info-course" method = "post">
                 <input type="hidden" name="courseId" value="${courses.courseId}">
                 <table class="table mt-4" >
                     <tr>

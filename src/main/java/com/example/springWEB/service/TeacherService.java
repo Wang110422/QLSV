@@ -62,5 +62,6 @@ import com.example.springWEB.repository.TeacherRepository;
 		public Page<Teacher> getPage(Pageable pageable){
 			return teacherRepository.findAll(pageable);
 		}
+
 	}
 	
